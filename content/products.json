@@ -1,0 +1,80 @@
+[
+  {
+    "id": "switchbot-hub3",
+    "name": "SwitchBot ハブ3",
+    "model": "W7202101",
+    "jan": "",
+    "category": "家電操作",
+    "description": "リビングの端のテレビ台に設置。離れた天井のシーリングファン2台も、ハブ3から問題なく操作できています。赤外線の届きやすさに期待して選びました。",
+    "productUrl": "https://item.rakuten.co.jp/switchbot/hub3/",
+    "roomUrl": "",
+    "rakutenSearchKeyword": "W7202101",
+    "a8RakutenSearchUrl": "",
+    "notes": "商品URLは過去の会話から引き継ぎ。購入前に販売ページの型番を確認。"
+  },
+  {
+    "id": "line-light",
+    "name": "ラインライト",
+    "model": "",
+    "jan": "4571557723583",
+    "category": "間接照明",
+    "description": "新築リビングの間接照明用に、調光できるものを選びました。キッチン側の小さな常夜灯と照明の雰囲気を揃えたいと考えて購入しました。",
+    "productUrl": "",
+    "roomUrl": "",
+    "rakutenSearchKeyword": "",
+    "a8RakutenSearchUrl": "",
+    "notes": "JANのみ判明。メーカー・型番・商品URLは未確認。型番確認後に検索語とA8.net URLを登録。"
+  },
+  {
+    "id": "odelic-oa253492",
+    "name": "ODELIC OA253492",
+    "model": "OA253492",
+    "jan": "",
+    "category": "照明用部材",
+    "description": "ラインライトを取り付けるために購入した部材です。ブラックの見た目が気に入っています。",
+    "productUrl": "https://item.rakuten.co.jp/mary-b/oa253492/",
+    "roomUrl": "",
+    "rakutenSearchKeyword": "OA253492",
+    "a8RakutenSearchUrl": "",
+    "notes": "過去の会話に基づく紹介。ラインライトとの適合・施工条件は販売店等に確認。"
+  },
+  {
+    "id": "javalo-elf",
+    "name": "JAVALO ELF シーリングファン",
+    "model": "JE-CF001V",
+    "jan": "",
+    "category": "空調・照明",
+    "description": "黒基調の広いリビングに2台設置。リビング階段があるため、空気の流れを整えたいと考えて選びました。SwitchBot ハブ3から操作しています。",
+    "productUrl": "https://item.rakuten.co.jp/lifeonproducts/je-cf001v/",
+    "roomUrl": "",
+    "rakutenSearchKeyword": "JE-CF001V",
+    "a8RakutenSearchUrl": "",
+    "notes": "設置状況は本人の体験。一般的な互換性や空調効果の保証ではありません。"
+  },
+  {
+    "id": "smart-bulb",
+    "name": "スマート電球",
+    "model": "DMW-T009A60",
+    "jan": "",
+    "category": "スマート照明",
+    "description": "4灯のシーリングファン2台に合わせて8個購入。調光とMatter対応を重視しました。同時に点灯する印象で、普段の動作には満足していますが、たまに接続不良があります。",
+    "productUrl": "https://item.rakuten.co.jp/dmastore/esmt009/",
+    "roomUrl": "",
+    "rakutenSearchKeyword": "DMW-T009A60",
+    "a8RakutenSearchUrl": "",
+    "notes": "本人の使用感。Matter対応と接続安定性の因果関係は未検証。"
+  },
+  {
+    "id": "archer-be805",
+    "name": "TP-Link Archer BE805",
+    "model": "ARCHERBE805 126",
+    "jan": "",
+    "category": "ネットワーク",
+    "description": "2階に設置するため、電波の届きやすさと、多数のスマート家電を接続する際の安定性を重視して選びました。家全体のスマートホーム化を支える機器です。",
+    "productUrl": "https://item.rakuten.co.jp/dtc/4895252503470/",
+    "roomUrl": "",
+    "rakutenSearchKeyword": "ARCHERBE805 126",
+    "a8RakutenSearchUrl": "",
+    "notes": "ユーザー指定の型番表記を保持。商品URLは過去の会話から引き継ぎ。"
+  }
+]
