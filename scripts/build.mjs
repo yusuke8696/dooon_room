@@ -59,7 +59,13 @@ export async function build(root = path.resolve(fileURLToPath(new URL('..', impo
     await save(`posts/${post.slug}/index.html`, layout(post.title, post.excerpt, `/posts/${post.slug}/`, `<article class="story"><a href="${link('/')}#journal">← 記事一覧</a><p class="eyebrow"><time datetime="${e(post.date)}">${e(post.date)}</time> / SMART HOME</p><h1>${e(post.title)}</h1><p class="lead">${e(post.excerpt)}</p><p class="ad-note">この記事には広告リンクが含まれる場合があります。</p>${post.sections.map(s => `<section><h2>${e(s.heading)}</h2>${s.paragraphs.map(p => `<p>${e(p)}</p>`).join('')}${(s.productIds ?? []).map(id => productCard(products.find(p => p.id === id))).join('')}</section>`).join('')}</article>`));
   }
   await save('404.html',layout('ページが見つかりません','ページが見つかりません。','/404.html',`<section><h1>ページが見つかりません</h1><a href="${link('/')}">トップに戻る</a></section>`));
-  await save('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['/','/products/',...posts.map(p=>`/posts/${p.slug}/`)].map(p=>`<url><loc>${e(site.url+link(p))}</loc></url>`).join('')}</urlset>`);
+  const sitemapUrls = ['/','/products/',...posts.map(p=>`/posts/${p.slug}/`)].map(p=>e(site.url+link(p)));
+  const bingSitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapUrls.map(url=>`<url><loc>${url}</loc></url>`).join('')}</urlset>`;
+  // Both engines support this XML protocol. Separate URLs allow independent submission.
+  const googleSitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map(url=>`  <url>\n    <loc>${url}</loc>\n  </url>`).join('\n')}\n</urlset>\n`;
+  await save('sitemap.xml', bingSitemap);
+  await save('sitemap_bing.xml', bingSitemap);
+  await save('sitemap_google.xml', googleSitemap);
   await save('.nojekyll','');
   await mkdir(path.join(out,'assets'),{recursive:true});
   await copyFile(path.join(root,'assets/style.css'),path.join(out,'assets/style.css'));

@@ -54,6 +54,22 @@ A8.net発行のHTTPS URLを `a8RakutenSearchUrl` にそのまま貼り付けま�
 
 HTMLはエスケープされます。商品紹介文は商品データを参照します。初期記事は `draft: false` です。公開前に文章を確認してください。
 
+## 検索エンジン別サイトマップ
+
+公開時に次のファイルを `dist/` へ自動生成します。記事を追加・公開すると全ファイルが同じ公開記事一覧から更新されます。下書き記事は含みません。
+
+| ファイル | 登録先・形式 |
+| --- | --- |
+| `sitemap_google.xml` | Google Search Console。Google公式対応のUTF-8 XML（urlset / url / loc、絶対URL） |
+| `sitemap_bing.xml` | Bing Webmaster Tools。既存サイトマップと同一の構成・内容 |
+| `sitemap.xml` | 登録済みURLの互換性のため維持 |
+
+マージ・公開後、Googleには `https://yusuke8696.github.io/dooon_room/sitemap_google.xml`、Bingには `https://yusuke8696.github.io/dooon_room/sitemap_bing.xml` を一度登録してください。Bingで既存の `sitemap.xml` を使用中なら、そのままでも構いません。ファイルは生成物なのでGitHubのソース一覧には表示されません。
+
+既存XMLもGoogle対応形式です。Google版は見やすい改行を付けていますが、形式や掲載URLの意味は同じです。この変更は登録先URLを分けるもので、Googleの取得エラー解消を保証するものではありません。テキスト形式を使う場合は `.txt` が必要なため、指定された `.xml` 内にプレーンテキストは入れません。
+
+仕様: [Google公式のサイトマップ形式](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap?hl=ja)
+
 ## GitHub Pages公開
 
 1. Settings → Pages → Build and deployment → Source を **GitHub Actions** に設定。

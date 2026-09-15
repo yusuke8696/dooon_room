@@ -35,6 +35,16 @@ test('drafts excluded; shared product links; project base path; invalid referenc
       const html = await readFile(path.join(root,`dist/${route}/index.html`),'utf8');
       assert.ok(html.includes('https://example.com/?id=1&amp;search=W7202101'));
     }
+    const expectedUrls = ['https://yusuke8696.github.io/dooon_room/','https://yusuke8696.github.io/dooon_room/products/','https://yusuke8696.github.io/dooon_room/posts/smart-home-six-items/'];
+    const legacy = await readFile(path.join(root,'dist/sitemap.xml'),'utf8');
+    assert.equal(await readFile(path.join(root,'dist/sitemap_bing.xml'),'utf8'), legacy);
+    for (const name of ['sitemap.xml','sitemap_google.xml','sitemap_bing.xml']) {
+      const xml = await readFile(path.join(root,'dist',name),'utf8');
+      assert.ok(xml.startsWith('<?xml version="1.0" encoding="UTF-8"?>'));
+      assert.ok(xml.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'));
+      assert.deepEqual([...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]),expectedUrls);
+      assert.ok(!xml.includes('secret-draft'));
+    }
     post.sections[0].productIds = ['missing'];
     await writeFile(file,JSON.stringify(post));
     await assert.rejects(build(root),/Unknown product/);
